@@ -17,17 +17,12 @@ public class SailBoat : MonoBehaviour
     void Update()
     {
         ApplyPaddlePower();
-        ApplyWindPower();
         ApplyDrag();
         ApplyMovement();
 
         Debug.Log($"Momentum: {momentum.magnitude:F3} | Alignment: {CalculateAlignment():F3}");
     }
-
-    private void ApplyWindPower()
-    {
-        momentum += sail.WindForce * Time.deltaTime;
-    }
+    
 
     void ApplyPaddlePower()
     {
