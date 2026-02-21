@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SailBoat : MonoBehaviour
 {
+    private Sail sail;
     private IGauge speed;
     private float lateralDrag = 2f; // how fast momentum bleeds when misaligned
     private float momentumDecay = 0.5f;
@@ -10,15 +11,22 @@ public class SailBoat : MonoBehaviour
     void Start()
     {
         speed = GetComponentInChildren<IGauge>();
+        sail = GetComponentInChildren<Sail>();
     }
 
     void Update()
     {
         ApplyPaddlePower();
+        ApplyWindPower();
         ApplyDrag();
         ApplyMovement();
 
         Debug.Log($"Momentum: {momentum.magnitude:F3} | Alignment: {CalculateAlignment():F3}");
+    }
+
+    private void ApplyWindPower()
+    {
+        momentum += sail.WindForce * Time.deltaTime;
     }
 
     void ApplyPaddlePower()
