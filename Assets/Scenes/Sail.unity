@@ -531,9 +531,9 @@ GameObject:
   m_Component:
   - component: {fileID: 908943008}
   - component: {fileID: 908943009}
+  - component: {fileID: 908943012}
   - component: {fileID: 908943010}
   - component: {fileID: 908943011}
-  - component: {fileID: 908943012}
   m_Layer: 6
   m_Name: Sail
   m_TagString: Untagged
@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ray: {fileID: 1245781974}
-  windStrength: 5
+  windStrength: 2
 --- !u!114 &1245781974
 MonoBehaviour:
   m_ObjectHideFlags: 0
