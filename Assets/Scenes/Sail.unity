@@ -623,11 +623,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SailMovement: {fileID: 908943012}
-  rayDistance: 5
-  hitMask:
-    serializedVersion: 2
-    m_Bits: 0
-  drawGizmos: 1
 --- !u!61 &908943011
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -689,7 +684,7 @@ MonoBehaviour:
   openAmount: 1
   sailMesh: {fileID: 908943008}
   openSpeed: 1
-  rotationSpeed: 90
+  rotationSpeed: 30
   maxRotationAngle: 45
 --- !u!1 &1245781972
 GameObject:
