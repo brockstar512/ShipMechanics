@@ -6,7 +6,8 @@ public abstract class EnvironmentRay : MonoBehaviour
     [SerializeField] protected float rayDistance = 5f;
     [SerializeField] protected LayerMask hitMask;
     [SerializeField] protected bool drawGizmos = true;
-
+    public float RayDistance => rayDistance;
+    
     protected List<RaycastHit2D> hits = new List<RaycastHit2D>();
 
     public IReadOnlyList<RaycastHit2D> Hits => hits;

@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa22b4a841b1e4b4db8f16e70da9c200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SailMovement: {fileID: 0}
+  SailMovement: {fileID: 908943012}
   rayDistance: 5
   hitMask:
     serializedVersion: 2
@@ -687,10 +687,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openAmount: 1
-  sailMesh: {fileID: 0}
+  sailMesh: {fileID: 908943008}
   openSpeed: 1
   rotationSpeed: 90
-  maxRotationAngle: 60
+  maxRotationAngle: 45
 --- !u!1 &1245781972
 GameObject:
   m_ObjectHideFlags: 0

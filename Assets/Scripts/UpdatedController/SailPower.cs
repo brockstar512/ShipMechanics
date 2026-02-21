@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class SailPower : MonoBehaviour
@@ -29,6 +28,10 @@ public class SailPower : MonoBehaviour
     void Update()
     {
         CastBackRay();
+        if (WindForce != null)
+        {
+            Debug.Log($"WindForce: {WindForce}");
+        }
     }
 
     public void ReceiveWind(float power, float angle)
@@ -56,7 +59,11 @@ public class SailPower : MonoBehaviour
         float cross = Vector3.Cross(sailFacing, windDirection).z;
         float dot = Vector2.Dot(sailFacing, windDirection);
 
-        float efficiency = Mathf.Abs(cross) * SailMovement.openAmount;
+        float broadside = Mathf.Abs(cross); // 1 = wind hitting sail flat, 0 = wind parallel to sail
+
+        float parallelForce = 0f; // swap to 0.25f whenever you decide
+        float efficiency = Mathf.Lerp(parallelForce, 1f, broadside) * SailMovement.openAmount;
+
         return sailFacing * efficiency * Mathf.Sign(dot) * windPower;
     }
 }
