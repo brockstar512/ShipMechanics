@@ -21,7 +21,7 @@ public class SailBoat : MonoBehaviour
         ApplyDrag();
         ApplyMovement();
 
-        Debug.Log($"Momentum: {momentum.magnitude:F3} | Alignment: {CalculateAlignment():F3}");
+        // Debug.Log($"Momentum: {momentum.magnitude:F3} | Alignment: {CalculateAlignment():F3}");
     }
 
     void ApplyPaddlePower()

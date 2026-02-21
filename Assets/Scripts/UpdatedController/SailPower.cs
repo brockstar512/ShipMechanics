@@ -12,12 +12,8 @@ public class SailPower : MonoBehaviour
 
     public void ReceiveWind(Vector2 windForce)
     {
-        if (SailMovement.openAmount == 0f)
-        {
-            WindForce = null;
-            return;
-        }
-
-        WindForce = windForce * SailMovement.openAmount;
+        return;
+        float effectiveOpen = Mathf.Max(SailMovement.openAmount, 0.1f);
+        WindForce = windForce * effectiveOpen;
     }
 }
