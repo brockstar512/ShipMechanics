@@ -34,10 +34,13 @@ public class WindPower : MonoBehaviour
         Vector2 windDirection = (hit.point - (Vector2)transform.position).normalized;
         Vector2 sailFacing = sail.transform.up;
 
-        // 1 = wind fully perpendicular to sail (max catch), 0 = wind parallel (no catch)
         float windCatch = Mathf.Abs(Vector2.Dot(sailFacing, windDirection));
 
-        return (Vector2)sail.transform.up * windCatch * windStrength;
+        // 1 when sail is close to origin, 0 when at max ray distance
+        float distance = Vector2.Distance(transform.position, hit.point);
+        float windFalloff = 1f - Mathf.Clamp01(distance / ray.RayDistance);
+
+        return (Vector2)sail.transform.up * windCatch * windFalloff * windStrength;
     }
 
     void DrawDebug()
@@ -49,7 +52,9 @@ public class WindPower : MonoBehaviour
         Vector2 sailFacing = lastHitTransform.up;
 
         float windCatch = Mathf.Abs(Vector2.Dot(sailFacing, windDirection));
-        Vector2 pushDirection = sailFacing * windCatch;
+        float distance = Vector2.Distance(transform.position, lastHitTransform.position);
+        float windFalloff = 1f - Mathf.Clamp01(distance / ray.RayDistance);
+        Vector2 pushDirection = sailFacing * windCatch * windFalloff;
 
         // Push force arrow — cyan, scaled by windCatch so it shrinks when parallel
         Vector2 tip = sailCenter + pushDirection;
