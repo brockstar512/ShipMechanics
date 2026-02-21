@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Sail : MonoBehaviour
+public class SailMovement : MonoBehaviour
 {
     [Range(0f, 1f)]
     public float openAmount = 1f;
@@ -11,7 +13,6 @@ public class Sail : MonoBehaviour
     [SerializeField] private float maxRotationAngle = 60f;
 
     private float currentRotation = 0f;
-    
 
     void Update()
     {
@@ -46,6 +47,4 @@ public class Sail : MonoBehaviour
         scale.y = openAmount;
         sailMesh.localScale = scale;
     }
-
-    
 }

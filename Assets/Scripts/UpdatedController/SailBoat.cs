@@ -2,16 +2,14 @@ using UnityEngine;
 
 public class SailBoat : MonoBehaviour
 {
-    private Sail sail;
-    private IGauge speed;
+    private IGauge paddleMomentum;
     private float lateralDrag = 2f; // how fast momentum bleeds when misaligned
     private float momentumDecay = 0.5f;
     private Vector2 momentum = Vector2.up * 0.5f;
 
     void Start()
     {
-        speed = GetComponentInChildren<IGauge>();
-        sail = GetComponentInChildren<Sail>();
+        paddleMomentum = GetComponentInChildren<IGauge>();
     }
 
     void Update()
@@ -26,7 +24,7 @@ public class SailBoat : MonoBehaviour
 
     void ApplyPaddlePower()
     {
-        Vector2 targetMomentum = (Vector2)transform.up * speed.currentValue;
+        Vector2 targetMomentum = (Vector2)transform.up * paddleMomentum.currentValue;
         momentum = Vector2.Lerp(momentum, targetMomentum, Time.deltaTime);
     }
 
