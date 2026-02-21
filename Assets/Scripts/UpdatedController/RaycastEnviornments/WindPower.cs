@@ -40,7 +40,7 @@ public class WindPower : MonoBehaviour
         float distance = Vector2.Distance(transform.position, hit.point);
         float windFalloff = 1f - Mathf.Clamp01(distance / ray.RayDistance);
 
-        return (Vector2)sail.transform.up * windCatch * windFalloff * windStrength;
+        return (Vector2)windDirection * windCatch * windFalloff * windStrength;
     }
 
     void DrawDebug()

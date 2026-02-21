@@ -718,7 +718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ray: {fileID: 1245781974}
-  windStrength: 2
+  windStrength: 5
 --- !u!114 &1245781974
 MonoBehaviour:
   m_ObjectHideFlags: 0
