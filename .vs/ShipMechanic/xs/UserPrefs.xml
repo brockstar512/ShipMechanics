@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{DD5B3639-6066-4CA0-584A-D4FC7147E0F6}|">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enviornment/Wind.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PlayerMovement/PlayerController.cs" Line="67" Column="15" />
+      <File FileName="Assets/Scripts/Enviornment/Wind.cs" Line="22" Column="36" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ShipMechanic" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Enviornment" expanded="True" />
+                <Node name="PlayerMovement" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f500012e-e3b9-4422-8452-28da0db9f43e" />
+</Properties>
